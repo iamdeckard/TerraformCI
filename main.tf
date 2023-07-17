@@ -29,8 +29,8 @@ resource "random_string" "uniquestring" {
 }
 
 resource "azurerm_resource_group" "rg" {
-  name     = "811-ec76c145-provide-continuous-delivery-with-gith"
-  location = "westus"
+  name     = "811-551f549f-provide-continuous-delivery-with-gith"
+  location = "southcentralus"
 }
 
 resource "azurerm_storage_account" "storageaccount" {
@@ -38,5 +38,5 @@ resource "azurerm_storage_account" "storageaccount" {
   resource_group_name      = azurerm_resource_group.rg.name
   location                 = azurerm_resource_group.rg.location
   account_tier             = "Standard"
-  account_replication_type = "ZRS"
+  account_replication_type = "LRS"
 }
